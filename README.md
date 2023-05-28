@@ -1,73 +1,48 @@
-# RAP repository template
+# Large Language Model (LLM) Examples
 
-:exclamation: Warning: this repository may contain references internal to NHS England that cannot be accessed publicly
+> **Note**
+> This has been setup and run using Github Codespaces with a premium github account, though you should also be able to run this within [Google Collab](https://colab.research.google.com)
 
-> Describe your project in 1-3 sentences.
+This repo contains scripts showing how you might get and use some open source "Large Language Models", or LLMs. These are "ChatGPT" style models where you can submit text in natural language format, e.g. a question, and get an answer back. 
 
-A template Python repository that can be adapted for RAP projects.
+The main benefit of these models over something like ChatGPT, is that **they can feasibly be run without an internet connection**, meaning they could be deployed and served within secure systems.
 
-_A **repository** is something that contains all of your project's files and and each file's revision history._
-
-## Link to publication
-
-> Include a link to where your publication is published.
+It will cover:
+* [Dolly by Databricks](https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm) 
+* [Alpaca Lora by Stanford](https://github.com/tloen/alpaca-lora)
 
 ## Contact
-**This repository is maintained by [NHS England Data Science Team](datascience@nhs.net)**.
-> _To contact us raise an issue on Github or via email._
-> 
-> See our (and our colleagues') other work here: [NHS England Analytical Services](https://github.com/NHSDigital/data-analytics-services)
+This repository is maintained by [@samhollings](https://github.com/SamHollings).
 
 ## Description
 
-> Provide more detailed overview of the project, including (if relevant) a description of the publication process.
+Getting and using "pretrained" models can daunting to people who haven't done it before. There might be even be the assumption that you need to train them from stratch. Thankfully, for many usecases it's not the case and there are models which have been trained on huge datasets, with very powerful compute, which we can quite easily take and use "out of the box".
 
-This repository is intended to function as a template for Python RAP projects at NHS England.
+> **Note**
+> Currently, these "pre-trained" models are typically stored on a website called [HuggingFace](https://huggingface.co/), which is more or less to data science models what github is code - a place where people can store, document, share and re-use models.
 
-You can learn more about project structure and why it's important in the ['project structure and packaging guide'](https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/project-structure-and-packaging/) of the RAP community of practice Github repo, a central source of RAP knowledge.
-
-_You can edit any part of this document. The licence section **must be edited** before publishing this repository publicly. For more information about publishing your project please see the ['how to publish your code in the open' guide](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/how-to-publish-your-code-in-the-open/)._
+This repo will:
+1. have some code snippets and/or links to guidance which prep Codespaces or Collab to use GPUs - these are really needed for LLMs are other wise they **aaaaaggggeeeesssss** to run,
+2. extract the models from huggingface, saving them to disk (or in a "local" model repository like MLFlow) so they could be used without internet connection
+3. Load the model and prep it into a form where it would be used easily - e.g. a function you can submit a string to and you receive a string back
+4. Show some examples of how these functionised models can then be applied to tables of data, mimicing potential business uses.
 
 ## Prerequisites
 
-> If applicable, list the items a user needs to be able to use your repository, such as a certain version of a programming language. It can be useful to link to documentation on how to install these items.
+Knowledge of Python is required
 
 * Python (> 3.0)
+* The requirements.txt contains what packages are needed.
+
 
 ## Getting Started
 
-> Tell the user how to get started (using a numbered list can be helpful). List one action per step with example code if possible.
+> **ToDo**
 
-1. Clone the repository. To learn about what this means, and how to use Git, see the [Git guide](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/using-git-collaboratively/).
-
-```
-git clone <insert URL>
-```
-
-2. Set up your environment, _either_ using [pip](https://pypi.org/project/pip/) or [conda](https://www.anaconda.com/). For more information on how to use virtual environments and why they are important,. see the [virtual environments guide](https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/virtual-environments/why-use-virtual-environments/).
-
-### Using pip
-```
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-```
-For Visual Studio Code it is necessary that you change your default interpreter to the virtual environment you just created .venv. To do this use the shortcut Ctrl-Shift-P, search for Python: Select interpreter and select .venv from the list.
-### Using conda
-The first line of the `environment.yml` file sets the new environment's name. In this template, the name is `rap_template`- you should change this in the `environment.yml` file, as well as the following code, to the name of your project.
-```
-conda env create -f environment.yml
-conda activate <environment_name>
-```
-3. _Optional_: In the terminal, change the directory into the cloned repos' directory, and run the example publication script:
-```
-cd rap-package-template
-python examples/example_create_publication.py
-```
 
 ## Project structure
 
-> Provide the user with an outline of your repository structure. This template is primarily designed for publications teams at NHS England. Projects with different requirements (e.g. more complex documentation and modelling) should look to [DrivenData's cookiecutter project structure](https://drivendata.github.io/cookiecutter-data-science/#directory-structure), as well as our [Community of Practice](https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/project-structure-and-packaging/) for guidance.
+> **ToDo**
 
 ```text
 |   .gitignore                        <- Files (& file types) automatically removed from version control for security purposes
@@ -183,17 +158,7 @@ There are several workaround to use this template for your project on GitLab. On
 
 ## Licence
 
-> The [LICENCE](/LICENCE) file will need to be updated with the correct year and owner
-
 Unless stated otherwise, the codebase is released under the MIT License. This covers both the codebase and any sample code in the documentation.
 
-Any HTML or Markdown documentation is [© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/) and available under the terms of the [Open Government 3.0 licence](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
-
 ## Acknowledgements
-- [Connor Quinn](https://github.com/connor1q)
-- [Sam Hollings](https://github.com/SamHollings)
-- [Maakhe Ndhlela](https://github.com/maakhe)
-- [Harriet Sands](https://github.com/harrietrs)
-- [Xiyao Zhuang](https://github.com/xiyaozhuang)
-- [Helen Richardson](https://github.com/helrich)
-- [The RAP team](https://github.com/NHSDigital/rap-community-of-practice)!
+> **ToDo**
