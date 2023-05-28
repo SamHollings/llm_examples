@@ -1,8 +1,8 @@
 {
     "image": "mcr.microsoft.com/devcontainers/universal:2",
-    "hostRequirements": {
-      "cpus": 8
-    },
+    //"hostRequirements": {
+    //  "cpus": 8
+    //},
     "waitFor": "onCreateCommand",
     "updateContentCommand": "python3 -m pip install -r requirements.txt",
     "postCreateCommand": "",
@@ -16,11 +16,12 @@
           "ms-python.python"
         ]
       }
-    },
-    "features": {
-        "ghcr.io/devcontainers/features/nvidia-cuda:1": {
-          "installCudnn": true
-        }
-      }
+    }//,
+    //"features": {
+    //    "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+    //      "installCudnn": true
+    //    }
+    //  }
   }
+// Currently the limitations of my Github license prevent me from making a more powerful codespaces... so that will prevent us from running this on codespaces
   
