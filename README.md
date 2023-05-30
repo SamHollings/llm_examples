@@ -106,7 +106,7 @@ This file currently runs a set of example steps using example data.
 
 ### `src` 
 
-> **note**
+> **Note**
 > the code in the notebook will be refactored to use "src" shortly.
 
 This directory contains the meaty parts of the code. By organising the code into logical sections, we make it easier to understand, maintain and test. Moreover, tucking the complex code out of the way means that users don't need to understand everything about the code all at once.
