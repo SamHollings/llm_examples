@@ -1,5 +1,5 @@
 # Large Language Model (LLM) Examples
-<a target="_blank" href="https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/model_monitoring/model_monitoring.ipynb">
+<a target="_blank" href="https://github.com/SamHollings/llm_examples/blob/main/llm_examples.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
@@ -41,7 +41,7 @@ Knowledge of Python is required
 ## Getting Started
 
 **Either:**
-* Press this button and get going: <a target="_blank" href="https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/model_monitoring/model_monitoring.ipynb">
+* Press this button and get going: <a target="_blank" href="https://github.com/SamHollings/llm_examples/blob/main/llm_examples.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a> 
 
