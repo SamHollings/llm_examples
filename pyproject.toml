@@ -3,13 +3,13 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rap-package-template"
-version = "1.0.0"
+name = "llm_examples"
+version = "0.1.0"
 authors = [
-    { name="Data Science Skilled team", email="datascience@nhs.net" }
+    { name="Sam Hollings", email="sam.hollings1@nhs.net" }
 ]
 readme = "README.md"
 requires-python = ">=3.10"
 
 [project.urls]
-"Homepage" = "https://nhsdigital.github.io/rap-community-of-practice/"
+"Homepage" = "https://github.com/SamHollings/llm_examples"

@@ -37,8 +37,10 @@ Knowledge of Python is required
 
 ## Getting Started
 
-> **ToDo**
-
+* Go to [Google Colab](https://colab.research.google.com/)
+* Open from GitHub, selecting this repository and this notebook (or you can load this notebook and upload it into Google Colab)
+* Within Colab, got to the "Runtime menu" and change the runtime type to use GPU
+* Press run all, and begin playing with the notebook!
 
 ## Project structure
 
@@ -46,42 +48,40 @@ Knowledge of Python is required
 
 ```text
 |   .gitignore                        <- Files (& file types) automatically removed from version control for security purposes
-|   config.toml                       <- Configuration file with parameters we want to be able to change (e.g. date)
-|   environment.yml                   <- Conda equivalent of requirements file
+|   config.toml                       <- [**Currently not used**] Configuration file with parameters we want to be able to change (e.g. date)
 |   requirements.txt                  <- Requirements for reproducing the analysis environment 
-|   pyproject.toml                    <- Configuration file containing package build information
+|   pyproject.toml                    <- [**Currently not used**] Configuration file containing package build information
 |   LICENCE                           <- License info for public distribution
 |   README.md                         <- Quick start guide / explanation of your project
+|   llm_examples.ipynb             <- Demonstrates how LLMs can be used - compatible with Google Collab    
 |
-|   create_publication.py             <- Runs the overall pipeline to produce the publication     
-|
-+---src                               <- Scripts with functions for use in 'create_publication.py'. Contains project's codebase.
++---src                               <- [**Currently not used**] Scripts with functions for use in 'create_publication.py'. Contains project's codebase.
 |   |       __init__.py               <- Makes the functions folder an importable Python module
 |   |
-|   +---utils                     <- Scripts relating to configuration and handling data connections e.g. importing data, writing to a database etc.
+|   +---utils                     <- [**Currently not used**] Scripts relating to configuration and handling data connections e.g. importing data, writing to a database etc.
 |   |       __init__.py               <- Makes the functions folder an importable Python module
-|   |       file_paths.py             <- Configures file paths for the package
-|   |       logging_config.py         <- Configures logging
-|   |       data_connections.py       <- Handles data connections i.e. reading/writing dataframes from SQL Server
+|   |       file_paths.py             <- [**Currently not used**] Configures file paths for the package
+|   |       logging_config.py         <- [**Currently not used**] Configures logging
+|   |       data_connections.py       <- [**Currently not used**] Handles data connections i.e. reading/writing dataframes from SQL Server
 |   | 
-|   +---processing                    <- Scripts with modules containing functions to process data i.e. clean and derive new fields
+|   +---processing                    <- [**Currently not used**] Scripts with modules containing functions to process data i.e. clean and derive new fields
 |   |       __init__.py               <- Makes the functions folder an importable Python module
-|   |       clean.py                  <- Perform cleaning and wrangling processes 
-|   |       derive_fields.py          <- Create new field definitions, columns, derivations.
+|   |       clean.py                  <- [**Currently not used**] Perform cleaning and wrangling processes 
+|   |       derive_fields.py          <- [**Currently not used**] Create new field definitions, columns, derivations.
 |   | 
-|   +---data_ingestion                <- Scripts with modules containing functions to preprocess read data i.e. perform validation/data quality checks, other preprocessing etc.
-|   |       __init__.py               <- Makes the functions folder an importable Python module
-|   |       preprocessing.py          <- Perform preprocessing, for example preparing your data for metadata or data quality checks.
-|   |       validation_checks.py      <- Perform validation checks e.g. a field has acceptable values.
+|   +---data_ingestion                <- [**Currently not used**] Scripts with modules containing functions to preprocess read data i.e. perform validation/data quality checks, other preprocessing etc.
+|   |       __init__.py               <- [**Currently not used**] Makes the functions folder an importable Python module
+|   |       preprocessing.py          <- [**Currently not used**] Perform preprocessing, for example preparing your data for metadata or data quality checks.
+|   |       validation_checks.py      <- [**Currently not used**] Perform validation checks e.g. a field has acceptable values.
 |   |
 |   +---data_exports
-|   |       __init__.py               <- Makes the functions folder an importable Python module
-|   |       write_excel.py            <- Populates an excel .xlsx template with values from your CSV output.
+|   |       __init__.py               <- [**Currently not used**] Makes the functions folder an importable Python module
+|   |       write_excel.py            <- [**Currently not used**] Populates an excel .xlsx template with values from your CSV output.
 |   |
-+---sql                               <- SQL scripts for importing data  
++---sql                               <- [**Currently not used**] SQL scripts for importing data  
 |       example.sql
 |
-+---templates                         <- Templates for output files
++---templates                         <- [**Currently not used**] Templates for output files
 |       publication_template.xlsx
 |
 +---tests
@@ -104,7 +104,10 @@ In the highest level of this repository (known as the 'root'), there is one Pyth
 
 This file currently runs a set of example steps using example data.
 
-### `src`
+### `src` 
+
+> **note**
+> the code in the notebook will be refactored to use "src" shortly.
 
 This directory contains the meaty parts of the code. By organising the code into logical sections, we make it easier to understand, maintain and test. Moreover, tucking the complex code out of the way means that users don't need to understand everything about the code all at once.
 
@@ -112,49 +115,6 @@ This directory contains the meaty parts of the code. By organising the code into
 * `processing` folder contains the core business logic.
 * `utils` folder contains useful reusable functions (e.g. to set up logging, and importing configuration settings from `config.toml`)
 * `write_excel.py` contains functions relating to the final part of the pipeline, any exporting or templating happens here. This is a simplistic application of writing output code to an Excel spreadsheet template (.xlsx). A good example of this application is: [NHS sickness absence rates publication](https://github.com/NHSDigital/absence-rates). We highly recommend to use [Automated Excel Production](https://nhsd-git.digital.nhs.uk/data-services/analytics-service/iuod/automated-excel-publications) for a more in depth Excel template production application.
-
-## Adapting for your project
-
-> Help users configure the repository for their needs. Note that the GitHub/GitLab differentiation is not a usual requirement for a README.
-
-### On GitHub
-
-The [version of this repository on GitHub](https://github.com/NHSDigital/rap-package-template) is out-of-date and will be updated shortly. You are able to create your own GitHub repository from the GitHub version of this template automatically by clicking 'Use this template'.
-
-### On GitLab
-
-Unfortunately the [ability to create a project from template](https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project-from-a-custom-template) is not available on the NHS England GitLab, so the process of using this template is rather manual.
-
-There are several workaround to use this template for your project on GitLab. One method is detailed below:
-
-1. Clone this repository, making sure to replace `<project name>` in the snippet below to the name of your project, **not using any spaces**. To learn about what this means, and how to use Git, see the [Git guide](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/using-git-collaboratively/).
-
-        git clone https://nhsd-git.digital.nhs.uk/data-services/analytics-service/iuod/rap-repository-template.git <project_name>
-
-2. Change directory into this folder
-
-        cd <project_name>
-
-3. Delete the `.git` file (this removes the existing file revision history)
-
-        rmdir /s .git 
-
-4. Initialise git (this starts tracking file revision history)
-
-        git init
-5. Add the files in the repo to revision history and make the initial commit
-
-        git add .
-        git commit -m "Initial commit"
-6. Create a new blank repository for your project on GitLab
-7. Add the URL of this new repository to your template repo
-
-        git remote set-url origin <insert URL>
-8. Push to GitLab
-
-        git push -u origin main
-
------------
 
 ## Licence
 
