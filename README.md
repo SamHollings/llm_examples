@@ -1,4 +1,5 @@
 # Large Language Model (LLM) Examples
+<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_examples/blob/main/llm_examples.ipynb">
 
 > **Note**
 > This has been setup and run using Github Codespaces with a premium github account, though you should also be able to run this within [Google Collab](https://colab.research.google.com)
@@ -37,7 +38,11 @@ Knowledge of Python is required
 
 ## Getting Started
 
-* Go to [Google Colab](https://colab.research.google.com/)
+**Either:**
+* Press this button and get going: <a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_examples/blob/main/llm_examples.ipynb"> 
+
+**Or:**
+Go to [Google Colab](https://colab.research.google.com/)
 * Open from GitHub, selecting this repository and this notebook (or you can load this notebook and upload it into Google Colab)
 * Within Colab, got to the "Runtime menu" and change the runtime type to use GPU
 * Press run all, and begin playing with the notebook!
