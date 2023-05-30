@@ -1,5 +1,7 @@
 # Large Language Model (LLM) Examples
-<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_examples/blob/main/llm_examples.ipynb">
+<a target="_blank" href="https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/model_monitoring/model_monitoring.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
 > **Note**
 > This has been setup and run using Github Codespaces with a premium github account, though you should also be able to run this within [Google Collab](https://colab.research.google.com)
@@ -39,7 +41,9 @@ Knowledge of Python is required
 ## Getting Started
 
 **Either:**
-* Press this button and get going: <a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_examples/blob/main/llm_examples.ipynb"> 
+* Press this button and get going: <a target="_blank" href="https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/model_monitoring/model_monitoring.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a> 
 
 **Or:**
 Go to [Google Colab](https://colab.research.google.com/)
