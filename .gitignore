@@ -8,7 +8,7 @@
 *.csv
 *.ipynb
 !llm_examples.ipynb
-!privategpt_examples.ipynb
+!privategpt_example.ipynb
 *.ipynb_checkpoints
 *.xlsx
 *.xls
